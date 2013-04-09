@@ -2,9 +2,11 @@
 <pluggable type="plugin">
 	<name>One Embed</name>
 	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache Software License 2.0</license>
-	<author url="http://mikelietz.org/">Mike Lietz</author>
+	<author url="http://github.com/mikelietz/">Mike Lietz</author>
 	<version>1.0</version>
 	<url>http://github.com/mikelietz/habari/plugins/one_embed</url>
 	<description><![CDATA[Make embedding one object very easy.]]></description>
-	<copyright>2011</copyright>
+	<help><value><![CDATA[Configure this with the HTML you would like to embed. It will be output in any post replacing the comment <code>&lt;!-- one_embed --&gt;</code> or the shortcode <code>[one_embed/]</code>]]>.</value></help>
+	<copyright>2013</copyright>
+	<guid>F09A18C9-BEEF-433D-8474-600EFEC79E60</guid>
 </pluggable>

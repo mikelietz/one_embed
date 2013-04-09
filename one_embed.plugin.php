@@ -24,14 +24,22 @@ class One_Embed extends Plugin
 
 	public function filter_post_content_out( $content )
 	{
+		$embed_code = self::get_embed_code();
+		$content = str_ireplace( '<!-- one_embed -->', $embed_code, $content );
+		return $content;
+	}
+
+	public function filter_shortcode_one_embed( $content, $code, $attr, $context ) {
+		return self::get_embed_code();
+	}
+
+	private function get_embed_code() {
 		$embed_code = '';
 		if(  User::identify()->loggedin ) {
 			$embed_code = _t( '<a href="%s">Edit this</a> ', array( URL::get( 'admin' , 'page=plugins&configure=' . $this->plugin_id . '&configaction=_configure' ) . '#plugin_' . $this->plugin_id ), "one_embed" );
 		}
 		$embed_code .= Options::get( 'one_embed__embed_code', '' );
-
-		$content = str_ireplace( '<!-- embed -->', $embed_code, $content );
-		return $content;
+		return $embed_code;
 	}
 }
 
